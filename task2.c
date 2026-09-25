@@ -57,7 +57,10 @@ int main(){
     printf("Converted temperature: %.2f \n", temperature_conversion(original_scale, target_scale, original_temperature));
     internal_temperature = temperature_conversion(original_scale, 'C', original_temperature);
     
-    if(internal_temperature < 0 & internal_temperature > -273.15){
+    if(internal_temperature < -273.15){
+        printf("Invalid temperature\n");
+    }
+    else if(internal_temperature < 0){
         printf("Temperature category: Freezing \n");
         printf("Weather advisory: Stay Indoors!\n");
     }
